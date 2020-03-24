@@ -15,3 +15,4 @@
   - [抽象类和接口](javase/object-oriented/AbstractClass-Interface.md)
   - [内部类](javase/object-oriented/InnerClass.md)
   - [异常处理](javase/object-oriented/Exception.md)
+- [**并发编程**](/docs/notes/java/javase/multi-thread/sidebar.md)
