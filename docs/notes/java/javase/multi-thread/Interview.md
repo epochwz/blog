@@ -1,5 +1,13 @@
 # 并发编程常见面试问题
 
+## 线程和进程的区别
+
+## 并发和并行的区别
+
+## 多线程和高并发的联系
+
+## 同步阻塞和异步非阻塞的关系
+
 ## 线程基础
 
 ### 创建线程
@@ -73,9 +81,9 @@
 
 #### 如何正确停止线程？
 
-由于 Java 没有提供任何机制来安全的停止线程，而是提供了 **中断(Interruption)** 这种线程协作机制
+因为 Java 没有提供任何机制来保证安全的停止线程，而是提供了 **中断(Interruption)** 这种线程协作机制，
 
-因此正确停止线程的基本原则是使用 interrupt 进行中断通知，而不是强制停止
+所以正确停止线程的基本原则是使用 interrupt 进行中断通知，而不是强制停止
 
 由于线程的中断机制是一种协作机制：一个线程需要通过发送中断信号来 "通知" 另一个线程停止运行，而被通知中断的线程自身拥有是否响应中断的权力 (包括是否停止以及何时停止)
 
@@ -101,8 +109,8 @@
 2. 再简述线程状态的转移路径
    1. `NEW` -> `RUNNABLE` -> `TERMINATED` 之间的状态转移是不可逆的
    2. `BLOCKED / WAITING / TIMED_WAITING` 期间发生了异常时也会终止
-   3. 线程可以在 `RUNNABLE` 状态和 `BLOCKED / WAITING / TIMED_WAITING` 状态之间来回转换
-   4. 线程通过 `wait` 进入 `WAITING/TIMED_WAITING` 状态，被 `notify` 后会直接进入 `BLOCKED` 状态
+   3. 线程通过 `wait` 进入 `WAITING/TIMED_WAITING` 状态，被 `notify` 后会直接进入 `BLOCKED` 状态
+   4. 线程可以在 `RUNNABLE` 状态和 `BLOCKED / WAITING / TIMED_WAITING` 状态之间来回转换
 3. 最后再详述状态的转移条件
 
 ![ThreadLifeCycle](/docs/images/notes/java/ThreadLifeCycle.png)

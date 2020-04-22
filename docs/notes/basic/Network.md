@@ -1,0 +1,64 @@
+# 计算机网络
+
+##  OSI 开放式互联参考模型
+
+国际标准化组织 ISO 制定的 OSI 七层协议模型是一个概念模型，事实标准是 TCP / IP 四层协议
+
+![osi](/docs/images/notes/basic/osi.png)
+![diff-osi-tcpip](/docs/images/notes/basic/diff-osi-tcp-ip.png)
+
+## TCP 三次握手
+
+IP 协议是无连接的，不会占用两个正在通信的计算机之间的通信线路，降低了对网络线路的需求，每条线可以满足许多不同计算机的通信需要
+
+IP,Internet Protocol 网际协议
+
+TCP,Control Protocol 传输控制协议：面向连接的、可靠的、基于字节流的传输层通信协议
+
+
+IP 可以唯一标识主机，PORT 可以唯一标识主机中的进程
+
+**答案**
+
+TPC 三次 “握手” 是为了建立相对可靠的连接，流程如下
+
+1. 客户端发送 SYN,Seq=x 到服务器，并进入 SYN_SEND 状态，等待服务器确认
+2. 服务器收到 SYN 包，必须确认客户端的 SYN(ACK=x+1)，同时自己也需要发送 SYN(Seq=y), 进入 SYN_SEND 状态，等待客户端再次确认
+3. 客户端收到服务器的 SYN+ACK 包，向服务器发送确认包 ACK(ack=y+1)，吃包发送完毕，客户端和服务器都进入 ESTABLISHED 状态，完成三次握手
+
+**为什么要三次握手？**
+
+原因：为了初始化 Sequence Number 的初始值，通信双方需要通知对方自己所初始化的 Sequence Number, 作为以后数据通信的序号，以保证应用接收到的数据不会因为网络问题而乱序，即 TCP 会用这个序号来拼接数据，因此客户端收到服务器的 ACK 后还需要再次发送 SYN 告知服务器自己已收到它的 Sequence Number 了
+
+**首次握手的隐患 -- SYN 超时问题**
+
+问题起因：当 Server 收到 Client 的 SYN 并回复 SYN-ACK 之后，如果未收到 Client 的 ACK, 则连接处于既未成功，也未失败的中间状态，Server 会不断重试直至超时 (Linux 默认等待 63 秒才断开连接)
+
+问题所在：SYN Flood -- 攻击者发送 SYN 后下线，从而将 TCP 连接队列耗尽
+
+解决措施
+
+1. SYN 队列满了之后，通过 tcp_syncookies 参数回发 SYN Cookie (通过 源地址端口，目标地址端口，时间戳 打造一个特别的 SYN Number )
+2. 若为正常连接，则 Client 会回发 SYN Cookie, 直接建立连接
+
+**建立连接后，Client 出现故障怎么办**
+
+保活机制：向对方发送保活探测报文，如果未收到响应则继续发送；当尝试次数达到保活探测数后仍未收到响应则中断连接
+
+
+**TCP 的四次挥手**
+
+“挥手”是为了终止连接
+
+
+## HTTP
+
+超文本传输协议 (HyperText Transfer Protocol,HTTP) 的主要特点
+
+- 基于 请求-响应 模式的 无状态 的 应用层协议，通常基于 TCP 连接
+- HTTP1.1 支持长连接 Keep Alive, 保持一段时间后才断开连接
+- 简单快速
+- 灵活：允许传输任意类型的数据对象，使用 Content-Type 标记正在传输的数据的类型
+- 无连接：限制每次只能处理一个请求
+- 无状态：对于事务处理没有记忆能力，后续处理需要前面的信息时需要重传
+
