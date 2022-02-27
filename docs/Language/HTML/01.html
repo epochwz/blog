@@ -1,0 +1,158 @@
+<!-- HTML 文档类型 -->
+<!DOCTYPE html>
+<!-- HTML 文档根元素 -->
+<html>
+	<!-- HTML 文档头部 -->
+	<head>
+		<!-- HTML 文档元数据 -->
+		<meta charset="utf-8">
+		<!-- HTML 文档标题 -->
+		<title></title>
+		<!-- 引入 CSS 文件 -->
+		<link rel="stylesheet" type="text/css" href="/path/xxx.css">
+		<!-- 引入 JavaScript 文件 -->
+		<script type="text/javascript" src="/path/xxx.js"></script>
+
+		<style type="text/css">
+			/* CSS 代码 */
+		</style>
+
+		<script type="text/javascript">
+			// JavaScript 代码
+		</script>
+	</head>
+	<!-- HTML 文档主体 -->
+	<body>
+		HTML Hyper Text Markup Language 超文本标记语言
+
+		<!-- 语义化标签 -->
+			<h1>标题</h1>
+			<p>段落</p>
+			<span>特殊文本</span>
+			<!-- 强调 -->
+			<strong></strong> <em></em>
+			<!-- 引用 -->
+			<q>短文本引用</q> <blockquote>长文本引用</blockquote>
+			<address>物理/虚拟地址</address>
+			<div>逻辑块</div>
+		<!-- 功能化标签 -->
+			<b>粗体</b> <i>斜体</i> <sup>上标</sup> <sub>下标</sub>
+			<br> 	换行
+			<hr> 	水平线
+			<code>代码行</code>
+			<pre>预格式化块</pre>
+		<!-- 特殊符号 -->
+			&nbsp;	空格
+			&lt;	<
+			&gt;	>
+			&reg;	已注册
+			&copy;	版权所有
+			&trade; 商标
+
+			<!-- 图片 -->
+			<img src="xxx.jpg" alt="image is broken" title="A image">
+			<!-- 链接(外部跳转/内部导航) -->
+			<a href="http://www.baidu.com" title="百度一下" target="_blank"></a>
+			<a href="mailto: 1595486364@qq.com; ? subject=邮件标题  & body=邮件内容"></a>
+
+			<!-- 无序列表 -->
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+			<!-- 有序列表 -->
+			<ol>
+				<li></li>
+				<li></li>
+			</ol>
+			<!-- 定义列表 -->
+			<dl>
+				<dt></dt>
+				<dd></dd>
+			</dl>
+
+			<!-- 表格 -->
+			<table>
+				<!-- 表格头部 -->
+				<thead></thead>
+				<!-- 表格主体 -->
+				<tbody>
+					<!-- 表格摘要 -->
+					<table summary="HTML、CSS、JavaScript">
+					<!-- 表格标题 -->
+					<caption>HTML、CSS、JavaScript 作用概览</caption>
+					<!-- 表格标题行 -->
+					<th>
+						<td>对象</td>
+						<td>作用</td>
+					</th>
+					<!-- 表格内容行 -->
+					<tr>
+						<td>HTML</td>
+						<td>结构</td>
+					</tr>
+					<tr>
+						<td>CSS</td>
+						<td>样式</td>
+					</tr>
+					<tr>
+						<td>JavaScript</td>
+						<td>行为</td>
+					</tr>
+				</tbody>
+				<!-- 表格尾部 -->
+				<tfooter></tfooter>
+			</table>
+
+			<!-- 表单 -->
+			<form method="GET/POST" action="http://www.baidu.com/login.do">
+				<!-- 表单控件：文本框、文本域、按钮、单选框、复选框、label -->
+				<!-- 普通文本输入框 -->
+				<input type="text" name="username" value="default">
+				<!-- 密码输入框 -->
+				<input type="password" name="password" value="default">
+				<!-- 文本域 -->
+				<textarea cols="" rows=""></textarea>
+				<!-- 单选框 -->
+				<label for="male">男</label>
+				<input type="radio" name="" id="male">
+				<!-- 复选框 -->
+				<input type="checkbox" name="" checked="true">
+				<!-- 下拉框 -->
+				<select multiple="multiple">
+					<option value="" selected="true"></option>
+					<option value="" ></option>
+					<option value="" ></option>
+				</select>
+				<!-- 提交按钮 -->
+				<input type="submit" name="" value="Submit">
+				<!-- 重置按钮 -->
+				<input type="reset" name="" value="Reset">
+				<!-- 普通按钮 -->
+				<input type="button" name="" value="Button">
+			</form>
+	</body>
+</html>
+
+<!--
+	元数据：向浏览器提供本 HTML 文档相关的信息(字符集编码、作者、关键词等)
+	meta 标签有两个属性值
+	http-equiv : 相当于 HTTP 协议中的请求头，传递相关信息以帮助浏览器精确显示页面的内容
+	name : 用于描述本网页，以便搜索引擎查找和分类该页面
+ -->
+<!-- 定义文档类型和字符集 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- 定义本网页的到期时间，一旦过期，必须重新导服务器上获取 -->
+<meta http-equiv="expires" content="Fri, 1 June 2018 00:00:00 GMT">
+<!-- 禁止浏览器从本地计算机的缓存中访问页面(无法脱机浏览，必须联网) -->
+<meta http-equiv="Pragma" content="no-cache">
+<!-- 自动刷新并指向新页面(2是页面停留时间) -->
+<!-- <meta http-equiv="Refresh" content="2;URL=http://www.baidu.com"> -->
+<!-- 设置 Cookie,若网页过期，本地 cookie 会被删除 -->
+<meta http-equiv="Set-Cookie" content="cookievalue=xxx; expires=Fri, 1 June 2018 00:00:00 GMT ; path=/">
+<!-- 显示窗口的设定：强制页面再当前窗口以独立页面显示 -->
+<meta http-equiv="Window-target" content="_top">
+
+<meta name ="keywords" content="html,demo,learn">
+<meta name ="description" content="A html demo for my girl-friend">
+<meta name ="author" content="s3kj-mwy">
