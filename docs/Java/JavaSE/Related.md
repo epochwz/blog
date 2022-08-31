@@ -45,7 +45,7 @@ Java 源文件最多只能有一个 `public` 类，且该源文件的文件名�
 | 功能 | 命令                         | 备注                                                                                     |
 | ---- | ---------------------------- | ---------------------------------------------------------------------------------------- |
 | 编译 | `javac -d desDir srcFile`    | `desDir` 是编译生成的字节码文件的存放路径；`srcFile` 是 Java 源文件所在的绝对 / 相对路径 |
-| 运行 | `java package.javaClassName` | `java 完整包名 . 类名`                                                                   |
+| 运行 | `java package.javaClassName` | `java 完整包名.类名`                                                                   |
 
 ## Java 程序发布方式
 
@@ -55,23 +55,23 @@ Java 源文件最多只能有一个 `public` 类，且该源文件的文件名�
 
 | 缩写 | 英文                    | 中文                                               |
 | :--- | :---------------------- | :------------------------------------------------- |
-| JAR  | Java Archive File       | Java 归档文件                                      |
-| WAR  | Web Archibe File        | Web 归档文件                                       |
-| EAR  | Enterprise Archive File | 企业应用归档文件『由 Web 应用和 EJB 两个部分组成』 |
+| JAR  | Java Archive File       | Java 应用归档文件                                      |
+| WAR  | Web Archive File        | Web  应用归档文件                                       |
+| EAR  | Enterprise Archive File | 企业 应用归档文件『由 Web 应用和 EJB 两个部分组成』 |
 
 ## 环境变量
 
-**变量**：计算机中某个内存单元的名称，操作系统/程序可以通过这个名称访问到该内存单元的数据
+**变量**：计算机中某个内存单元的名称，操作系统/程序/源代码可以通过这个名称访问到该内存单元的数据
 
 **环境变量**：在操作系统层面定义的变量
 
-- **PATH**：该变量定义了操作系统搜索命令的路径
+- **PATH**：该变量定义了 `操作系统` 搜索 `程序命令` 的路径
 
     ```bash
     PATH=${JAVA_HOME}/bin:$PATH
     ```
 
-- **CLASSPATH**：该变量定义了 JRE 搜索 Java 命令的路径
+- **CLASSPATH**：该变量定义了 `JRE` 搜索 `Java 命令` 的路径
 
     ```bash
     CLASSPATH=.;${JAVA_HOME}/lib
@@ -86,6 +86,6 @@ Java 源文件最多只能有一个 `public` 类，且该源文件的文件名�
 
 **Unicode**, 万国码，统一码，其目的是支持世界上所有的字符集
 
-*Java 语言内置支持 Unicode 字符集*
+Tips: *Java 语言内置支持 Unicode 字符集*
 
 [java-program-execution-procedures]:../../images/java/java-program-execution-procedures.png
